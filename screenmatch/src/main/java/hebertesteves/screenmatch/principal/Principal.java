@@ -2,10 +2,12 @@ package hebertesteves.screenmatch.principal;
 
 import hebertesteves.screenmatch.model.DadosSerie;
 import hebertesteves.screenmatch.model.DadosTemporada;
+import hebertesteves.screenmatch.model.Serie;
 import hebertesteves.screenmatch.service.ConsumoApi;
 import hebertesteves.screenmatch.service.ConverteDados;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Principal {
     private Scanner leitura = new Scanner(System.in);
@@ -76,6 +78,13 @@ public class Principal {
     }
 
     private void listarSeriesBuscadas() {
-        dadosSeries.forEach(System.out::println);
+        List<Serie> series = new ArrayList<>();
+        series = dadosSeries.stream()
+                        .map(d -> new Serie(d))
+                .toList();
+
+        series.stream()
+                .sorted(Comparator.comparing(Serie::getGenero))
+                .forEach(System.out::println);
     }
 }
