@@ -3,6 +3,7 @@ package hebertesteves.screenmatch.principal;
 import hebertesteves.screenmatch.model.DadosSerie;
 import hebertesteves.screenmatch.model.DadosTemporada;
 import hebertesteves.screenmatch.model.Serie;
+import hebertesteves.screenmatch.service.ConsultaChatGPT;
 import hebertesteves.screenmatch.service.ConsumoApi;
 import hebertesteves.screenmatch.service.ConverteDados;
 

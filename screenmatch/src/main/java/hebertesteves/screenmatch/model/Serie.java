@@ -1,5 +1,7 @@
 package hebertesteves.screenmatch.model;
 
+import hebertesteves.screenmatch.service.ConsultaChatGPT;
+
 import java.util.Optional;
 import java.util.OptionalDouble;
 
@@ -23,6 +25,9 @@ public class Serie {
         this.atores = dadosSerie.atores();
         this.poster = dadosSerie.poster();
         this.sinopse = dadosSerie.sinopse();
+        /* Não foi aplicado por questão de credito
+            this.sinopse = ConsultaChatGPT.obterTraducao(dadosSerie.sinopse()).trim();
+         */
     }
 
     public String getTitulo() {
