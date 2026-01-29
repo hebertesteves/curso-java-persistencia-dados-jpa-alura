@@ -82,6 +82,18 @@ public class Episodio {
         this.dataLancamento = dataLancamento;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
+
     @Override
     public String toString() {
         return "temporada=" + temporada +

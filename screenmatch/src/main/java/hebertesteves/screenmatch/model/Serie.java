@@ -114,6 +114,10 @@ public class Serie {
         return episodios;
     }
 
+    public void setEpisodios(List<Episodio> episodios) {
+        this.episodios = episodios;
+    }
+
     @Override
     public String toString() {
         return  "genero=" + genero +

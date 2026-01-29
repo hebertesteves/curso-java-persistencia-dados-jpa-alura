@@ -1,6 +1,7 @@
 package hebertesteves.screenmatch;
 
 import hebertesteves.screenmatch.principal.Principal;
+import hebertesteves.screenmatch.repository.EpisodioRepository;
 import hebertesteves.screenmatch.repository.SerieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,13 +14,16 @@ public class ScreenmatchApplication implements CommandLineRunner {
 	@Autowired
 	private SerieRepository serieRepository;
 
+	@Autowired
+	private EpisodioRepository episodioRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(ScreenmatchApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		Principal principal = new Principal(serieRepository);
+		Principal principal = new Principal(serieRepository, episodioRepository);
 		principal.exibeMenu();
 	}
 }
