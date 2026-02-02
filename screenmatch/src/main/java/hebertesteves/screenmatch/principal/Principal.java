@@ -18,8 +18,8 @@ public class Principal {
     private final String ENDERECO = "https://www.omdbapi.com/?t=";
     private final String API_KEY = "&apikey=6585022c";
     private List<DadosSerie> dadosSeries = new ArrayList<>();
-    private SerieRepository serieRepository;
-    private EpisodioRepository episodioRepository;
+    private final SerieRepository serieRepository;
+    private final EpisodioRepository episodioRepository;
     private List<Serie> series = new ArrayList<>();
 
     public Principal(SerieRepository serieRepository, EpisodioRepository episodioRepository) {
