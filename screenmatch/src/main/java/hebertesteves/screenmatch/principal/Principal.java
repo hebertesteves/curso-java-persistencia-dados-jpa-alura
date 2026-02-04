@@ -19,12 +19,10 @@ public class Principal {
     private final String API_KEY = "&apikey=6585022c";
     private List<DadosSerie> dadosSeries = new ArrayList<>();
     private final SerieRepository serieRepository;
-    private final EpisodioRepository episodioRepository;
     private List<Serie> series = new ArrayList<>();
 
-    public Principal(SerieRepository serieRepository, EpisodioRepository episodioRepository) {
+    public Principal(SerieRepository serieRepository) {
         this.serieRepository = serieRepository;
-        this.episodioRepository = episodioRepository;
     }
 
     public void exibeMenu() {
@@ -104,8 +102,6 @@ public class Principal {
 
             serieEncontrada.setEpisodios(episodios);
             serieRepository.save(serieEncontrada);
-
-            episodioRepository.saveAll(episodios);
         } else {
             System.out.println("Série não encontrada!");
         }
